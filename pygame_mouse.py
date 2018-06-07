@@ -4,12 +4,17 @@ import sys, random, math, fractions
 from time import sleep
 
 pygame.init()
-Screen_Width = 800
-Screen_Height = 600
+
+infoObject = pygame.display.Info()
+
+Screen_Width, Screen_Height = infoObject.current_w, infoObject.current_h
+
+print("Screen width: %s screen height: %s" %(Screen_Width, Screen_Height ))
 
 screen = pygame.display.set_mode((Screen_Width, Screen_Height))
 
 white = (255, 255, 255)
+
 blue = (0, 0, 255)
 
 clock = pygame.time.Clock()
@@ -24,8 +29,7 @@ while running:
 
     clock.tick(60)
 
-
-    pygame.draw.rect(screen, red, (50, 50, (Screen_Width - 100), (Screen_Height -100)), 3)
+    pygame.draw.rect(screen, red, (20, 20, (Screen_Width - 45), (Screen_Height - 120)), 3)
 
     pygame.display.update()
 
